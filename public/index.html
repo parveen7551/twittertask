@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Twitter</title>
+
+  <!-- build:js asset/min-lib/externalLib.js -->
+  <script src="javascripts/angular.min.js"></script>
+
+  <!-- /build -->
+  <script src="app.js"></script>
+</head>
+
+
+<body ng-app="sampleApp">
+  <div class="container" ng-controller="twitterCtrl">
+    >>{{twitterLogin}}
+    <div class="jumbotron text-center" ng-show="twitterLogin">
+      <h1><span class="fa fa-lock"></span> Node Authentication</h1>
+
+      <p>Login or Register with:</p>
+
+      <a href="/auth/twitter" class="btn btn-info" ng-click="twitterLogin();"><span class="fa fa-twitter" ></span> Twitter</a>
+
+    </div>
+
+    <div ng-show="twitterLogin">
+      <input ng-model="keyword" name="search"> </input>
+      <button ng-click="searchKeywords(keyword)">GET</button>
+
+    </div>
+<div>
+    <table dir="ltr" width="500" border="1" summary="purpose/structure for speech output">
+      <caption>Here Tweets will come based on  the keyword.
+      </caption>
+      <colgroup width="50%" />
+      <colgroup id="colgroup" class="colgroup" align="center" valign="middle" title="title" width="1*" span="2" style="background:#ddd;"
+      />      
+        <tr>
+          <th scope="col">Text</th>
+          <th scope="col">Image </th>
+          <th scope="col">User</th>
+        </tr>      
+        <tr ng-repeat=" tweet in tweetList">
+          <td>{{tweet.text}}</td>
+          <td><img ng-src="{{tweet.user.profile_image_url}}"/></td>
+          <td>{{tweet.user.screen_name}}</td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+  </div>
+</body>
+
+</html>
