@@ -16,9 +16,9 @@ var authConfig = require('./auth');
     });
 
     // used to deserialize the user
-    // passport.deserializeUser(function(id, done) {        
-    //     done(null, user);        
-    // });    
+    passport.deserializeUser(function(id, done) {        
+        done(null, user);        
+    });    
   
     passport.use(new TwitterStrategy({
 
