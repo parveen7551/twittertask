@@ -1,10 +1,11 @@
 //using twitter module to interact with the twitter apis
 var Twitter = require('twitter');
+
 var twitterConf = {
-	consumer_key: 'twiiterdetial',
-	consumer_secret: 'scetconsuumer',
-	access_token_key: 'accesstoken-key',
-	access_token_secret: 'scret'
+	consumer_key: 'CZMVIyYeSUfaVtxufGhUHLDHh',
+	consumer_secret: 'zO6rMDzXeUq80C7Z5rHmOJSJwKF0RzLFcwbp6Q9qiHFyp38ZsT',
+	access_token_key: '	349542597-K48InpclYDXwSrhkKRbnPKuduGOnYtlp2cOJqlKT',
+	access_token_secret: '134CiXUB4Tn11qUd17mrtiYbmcGfVCQ3s1FI5sYI7RmPF'
 }
 var client = new Twitter(twitterConf);
 
